@@ -73,7 +73,6 @@
     <Compile Include="src\Customer.cs" />
     <Compile Include="src\Movie.cs" />
     <Compile Include="src\Rental.cs" />
-    <Compile Include="test\SampleTest.cs" />
     <Compile Include="test\VideoStoreTests.cs" />
   </ItemGroup>
   <ItemGroup>
