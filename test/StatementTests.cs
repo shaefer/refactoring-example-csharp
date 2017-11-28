@@ -2,26 +2,26 @@
 
 namespace VideoStore
 {
-    public class VideoStoreTests
+    public class StatementTests
     {
 
         private Customer customer;
 
-        public VideoStoreTests()
+        public StatementTests()
         {
             customer = new Customer("Casey");
         }
 
   
         [Fact]
-        public void testSingleNewReleaseStatement()
+        public void TestSingleNewReleaseStatement()
         {
             customer.AddRental(new Rental(new Movie("Thor: Ragnarok", PriceCode.NewRelease), 3));
             Assert.Equal("Rental record for Casey\n\tThor: Ragnarok\t9.0\nAmount owed is 9.0\nYou earned 2 frequent renter points.", customer.Statement());
         }
 
         [Fact]
-        public void testDualNewReleaseStatement()
+        public void TestDualNewReleaseStatement()
         {
             customer.AddRental(new Rental(new Movie("Thor: Ragnarok", PriceCode.NewRelease), 3));
             customer.AddRental(new Rental(new Movie("Justice League", PriceCode.NewRelease), 3));
@@ -29,14 +29,14 @@ namespace VideoStore
         }
 
         [Fact]
-        public void testSingleChildrensStatement()
+        public void TestSingleChildrensStatement()
         {
             customer.AddRental(new Rental(new Movie("The Last Unicorn", PriceCode.Childrens), 3));
             Assert.Equal("Rental record for Casey\n\tThe Last Unicorn\t1.5\nAmount owed is 1.5\nYou earned 1 frequent renter points.", customer.Statement());
         }
 
         [Fact]
-        public void testMultipleRegularStatement()
+        public void TestMultipleRegularStatement()
         {
             customer.AddRental(new Rental(new Movie("The Matrix", PriceCode.Regular), 1));
             customer.AddRental(new Rental(new Movie("6 Days 7 Nights", PriceCode.Regular), 2));
