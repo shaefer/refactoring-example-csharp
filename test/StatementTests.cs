@@ -17,7 +17,7 @@ namespace VideoStore
         public void TestSingleNewReleaseStatement()
         {
             customer.AddRental(new Rental(new Movie("Thor: Ragnarok", PriceCode.NewRelease), 3));
-            Assert.Equal("Rental record for Casey\n\tThor: Ragnarok\t9.0\nAmount owed is 9.0\nYou earned 2 frequent renter points.", customer.Statement());
+            Assert.Equal("Rental record for Casey\n\tThor: Ragnarok\t9\nAmount owed is 9\nYou earned 2 frequent renter points.", customer.Statement());
         }
 
         [Fact]
@@ -25,7 +25,7 @@ namespace VideoStore
         {
             customer.AddRental(new Rental(new Movie("Thor: Ragnarok", PriceCode.NewRelease), 3));
             customer.AddRental(new Rental(new Movie("Justice League", PriceCode.NewRelease), 3));
-            Assert.Equal("Rental record for Casey\n\tThor: Ragnarok\t9.0\n\tJustice League\t9.0\nAmount owed is 18.0\nYou earned 4 frequent renter points.", customer.Statement());
+            Assert.Equal("Rental record for Casey\n\tThor: Ragnarok\t9\n\tJustice League\t9\nAmount owed is 18\nYou earned 4 frequent renter points.", customer.Statement());
         }
 
         [Fact]
@@ -42,7 +42,7 @@ namespace VideoStore
             customer.AddRental(new Rental(new Movie("6 Days 7 Nights", PriceCode.Regular), 2));
             customer.AddRental(new Rental(new Movie("The Man Who Knew Too Little", PriceCode.Regular), 3));
 
-            Assert.Equal("Rental record for Casey\n\tThe Matrix\t2.0\n\t6 Days 7 Nights\t2.0\n\tThe Man Who Knew Too Little\t3.5\nAmount owed is 7.5\nYou earned 3 frequent renter points.", customer.Statement());
+            Assert.Equal("Rental record for Casey\n\tThe Matrix\t2\n\t6 Days 7 Nights\t2\n\tThe Man Who Knew Too Little\t3.5\nAmount owed is 7.5\nYou earned 3 frequent renter points.", customer.Statement());
         }
 
     }

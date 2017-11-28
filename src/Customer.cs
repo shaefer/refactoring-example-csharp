@@ -60,12 +60,12 @@ namespace VideoStore
 				}
 
 				// Show figures for this rental
-				result += "\t" + each.Movie.Title + "\t" + string.Format("{0:N1}", thisAmount) + "\n";
+				result += "\t" + each.Movie.Title + "\t" + thisAmount.ToString() + "\n";
 				totalAmount += thisAmount;
 			}
 
 			// Add footer lines
-			result += "Amount owed is " + string.Format("{0:N1}", totalAmount) + "\n";
+			result += "Amount owed is " + totalAmount.ToString() + "\n";
 			result += "You earned " + frequentRenterPoints.ToString() + " frequent renter points.";
 			return result;
 		}
